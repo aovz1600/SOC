@@ -1,0 +1,26 @@
+package org.SOC.mapper;
+
+import java.util.List;
+
+import org.SOC.domain.CommVO;
+import org.SOC.dto.CommDTO;
+
+public interface CommMapper {
+
+	List<CommDTO> list(int commno) throws Exception;
+
+	void  create(CommDTO CTO) throws Exception;
+
+	void update(CommDTO CTO) throws Exception;
+
+	void delete(int commno) throws Exception;
+
+	/* List<CommVO> listPage(int postno, Criteria cri) throws Exception; */
+
+	/*
+	 * int count(int postno) throws Exception;
+	 * 
+	 * List<CommDTO> listReplyPage(int postno);
+	 */
+
+}

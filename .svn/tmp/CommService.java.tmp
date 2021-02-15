@@ -1,0 +1,35 @@
+package org.SOC.service;
+
+import java.util.List;
+
+import org.SOC.domain.Criteria;
+import org.SOC.dto.CommDTO;
+import org.SOC.domain.Criteria;
+import org.SOC.dto.CommDTO;
+
+public interface CommService {
+
+	public List<CommDTO> listComm(int commno) throws Exception;
+
+	public void createComm(CommDTO CTO) throws Exception;
+
+	public void modifyComm(CommDTO CTO) throws Exception;
+
+	public void removeComm(int commno) throws Exception;
+
+<<<<<<< .mine
+	 public List<CommDTO> listCommPage(Integer postno, Criteria cri) throws Exception; 
+||||||| .r211
+=======
+	/*
+	 * public List<CommVO> listCommPage(int postno, Criteria cri) throws Exception;
+	 */
+>>>>>>> .r212
+
+	/*
+	 * public int count(int postno) throws Exception;
+	 * 
+	 * List<CommDTO> listReplyPage(int postno, Criteria cri) throws Exception;
+	 */
+
+}

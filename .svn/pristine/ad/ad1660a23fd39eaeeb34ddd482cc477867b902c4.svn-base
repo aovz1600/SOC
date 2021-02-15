@@ -1,0 +1,56 @@
+package org.SOC.service;
+
+import java.util.List;
+
+import org.SOC.domain.UserVO;
+import org.SOC.dto.TeamList;
+import org.SOC.dto.Teamrank;
+import org.SOC.dto.UserList;
+import org.SOC.mapper.AdminMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class AdminServiceImpl implements AdminService {
+
+	@Autowired
+	private AdminMapper adminMapper;
+
+	@Override
+	public List<UserList> Userlist(int adminno) throws Exception {
+		return adminMapper.Userlist(adminno);
+	}
+
+	@Override
+	public void lockchange(UserVO uvo) throws Exception {
+		adminMapper.lockchange(uvo);
+		
+	}
+
+	@Override
+	public void userdelete(UserVO uvo) throws Exception {
+		adminMapper.userdelete(uvo);
+		
+	}
+
+	@Override
+	public List<TeamList> Teamlist() throws Exception {
+		return adminMapper.Teamlist();
+	}
+	
+	@Transactional
+	@Override
+	public void teamdelete(int teamno) throws Exception {
+		adminMapper.memberrole(teamno);
+		adminMapper.teamdelete(teamno);
+	}
+
+	@Override
+	public List<Teamrank> teamrank() throws Exception {
+		
+		return adminMapper.teamrank();
+	}
+
+	
+}

@@ -1,0 +1,93 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jspf" %>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        
+        <!--// SubHeader //-->
+        <div class="ritekhela-subheader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>팀 페이지</h1>
+                        <ul class="ritekhela-breadcrumb">
+                            <li><a href="/">홈페이지</a></li>
+                            <li>팀 페이지</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// SubHeader //-->
+
+        <!--// Content //-->
+        <div class="ritekhela-main-content">
+<style>
+
+    #teamname ,  #teamloc {
+    float: left;
+    width: 100%;
+    background-color: rgba(0,0,0,0.20);
+    color: rgba(120,120,120,1);/* #999999; */
+    padding: 22px 22px;
+    border: none;
+    height: 30px;
+    margin-bottom: 12px;
+    vertical-align: middle !important;
+}
+    #teamintro {
+    float: left;
+    width: 100%;
+    background-color: rgba(0,0,0,0.20);
+    color: rgba(120,120,120,1);/* #999999; */
+    padding: 10px 20px 5px 20px;
+    border: none;
+    height: 140px;
+    margin-bottom: 12px;
+    vertical-align: middle !important;
+}
+</style>
+            <!--// Main Section //-->
+            <div class="ritekhela-main-section ritekhela-fixture-list-full">
+                <div class="container">
+                    <div class="row">
+                        
+                        
+                        <div class="col-md-12">
+                        <form role="form" id="teammodify"method="post">
+                   	<input type="hidden" name="teamno" value="${teaminfoMap.teaminfo.teamno}">
+                    <input type="text" name="teamname" id="teamname" value="${teaminfoMap.teaminfo.teamname}" placeholder="팀명">
+                    <input type="text" name="teamloc" id="teamloc" value="${teaminfoMap.teaminfo.teamloc}" placeholder="팀 활동지역">
+                    <textarea name="teamintro" id="teamintro"  placeholder="팀소개">${teaminfoMap.teaminfo.teamintro}</textarea>
+                    
+                    <input type="submit" value="정보 수정" class="ritekhela-bgcolor">
+                </form>
+                        </div>
+                        <!--// Full Section //-->
+
+					<script>
+       		$("#teammodify").submit( function(e){
+       			if (($.trim($("#teamname").val()) == "")) {
+       				alert("팀명을 입력하여 주세요");
+       				return false;
+       			}
+       			if (($.trim($("#teamloc").val()) == "")) {
+       				alert("팀활동지역을 입력하여 주세요");
+       				return false;
+       			}
+       			if (($.trim($("#teamintro").val()) == "")) {
+       				alert("팀소개를 입력하여 주세요");
+       				return false;
+       			}
+       		});
+       
+       </script>
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section //-->
+
+        </div>
+        <!--// Content //-->
+
+
+<%@ include file ="../include/footer.jspf"%>

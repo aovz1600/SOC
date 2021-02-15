@@ -1,0 +1,60 @@
+package org.SOC.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.SOC.domain.CommVO;
+import org.SOC.domain.Criteria;
+import org.SOC.dto.CommDTO;
+import org.SOC.mapper.CommMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CommServiceImpl implements CommService {
+
+	@Autowired
+	private CommMapper commMapper;
+
+	public List<CommDTO> listComm(int commno) throws Exception {
+
+		return commMapper.list(commno);
+	}
+
+	public void  createComm(CommDTO CTO) throws Exception {
+		commMapper.create(CTO);
+	}
+
+	public void modifyComm(CommDTO CTO) throws Exception {
+		commMapper.update(CTO);
+	}
+
+	public void removeComm(int commno) throws Exception {
+		commMapper.delete(commno);
+	}
+
+<<<<<<< .mine
+	
+	  public List<CommDTO> listCommPage(Integer postno, Criteria cri) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("postno",postno);
+		map.put("cri",cri);
+		return commMapper.listPage(map);
+	  
+	  }
+	 
+||||||| .r211
+=======
+	
+	/*
+	 * public int count(int postno) throws Exception { return
+	 * commMapper.count(postno); }
+	 * 
+	 * public List<CommDTO> listReplyPage(int postno, Criteria cri) throws Exception
+	 * { return commMapper.listReplyPage(postno); }
+	 */
+>>>>>>> .r212
+
+	
+}

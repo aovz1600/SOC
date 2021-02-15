@@ -1,0 +1,34 @@
+package org.SOC.mapper;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.SOC.domain.CommVO;
+<<<<<<< .mine
+import org.SOC.domain.Criteria;
+import org.SOC.dto.CommDTO;
+||||||| .r211
+=======
+import org.SOC.dto.CommDTO;
+>>>>>>> .r212
+
+public interface CommMapper {
+
+	List<CommDTO> list(int commno) throws Exception;
+
+	void  create(CommDTO CTO) throws Exception;
+
+	void update(CommDTO CTO) throws Exception;
+
+	void delete(int commno) throws Exception;
+
+	 List<CommDTO> listPage(Map<String, Object> map) throws Exception; 
+
+	/*
+	 * int count(int postno) throws Exception;
+	 * 
+	 * List<CommDTO> listReplyPage(int postno);
+	 */
+
+}

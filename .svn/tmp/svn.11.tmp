@@ -1,0 +1,41 @@
+package org.SOC.service;
+
+import java.util.List;
+
+import org.SOC.domain.CommVO;
+import org.SOC.mapper.CommMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CommServiceImpl implements CommService {
+
+	@Autowired
+	private CommMapper commMapper;
+
+	public List<CommVO> listComm(int postno) throws Exception {
+
+		return commMapper.list(postno);
+	}
+
+	public void addComm(CommVO CVO) throws Exception {
+		commMapper.create(CVO);
+	}
+
+	public void modifyComm(CommVO CVO) throws Exception {
+		commMapper.update(CVO);
+	}
+
+	public void removeComm(int commno) throws Exception {
+		commMapper.delete(commno);
+	}
+
+	/*
+	 * public List<CommVO> listCommPage(int postno, Criteria cri) throws Exception {
+	 * 
+	 * }
+	 */
+	public int count(int postno) throws Exception {
+		return commMapper.count(postno);
+	}
+}
